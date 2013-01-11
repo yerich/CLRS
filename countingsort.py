@@ -31,8 +31,8 @@ array = [1, 5, 4, 3, 2, 6, 7, 12, 8, 11, 9, 10]
 countingSort(array, 12)
 print array
 
-array = [random.randint(0,10) for x in xrange(1000000)]
+array = [random.randint(0,1000000) for x in xrange(1000000)]
 print "Beginning large sort..."
 start = time.time()
-countingSort(array, 10)
+countingSort(array, 1000000)
 print "Done. It took", round(time.time() - start, 4), "seconds."
