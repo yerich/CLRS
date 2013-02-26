@@ -9,9 +9,7 @@ def swap(A, x, y):
 
 class Heap:
     def __getitem__(self, key):
-        if(key < len(self)):
-            return self.data[key]
-        return -99999999
+        return self.data[key]
     
     def __setitem__(self, key, value):
         self.data[key] = value
@@ -62,13 +60,14 @@ def heapsort(A):
         maxHeapify(A, 0)
         i -= 1
 
-A = Heap()
-A.data = [1, 5, 4, 3, 2, 6, 7, 12, 8, 11, 9, 10]
-heapsort(A)
-print A.data
-
-A.data = random.sample(range(1000000), 1000000)
-print "Beginning large sort..."
-start = time.time()
-heapsort(A)
-print "Done. It took", round(time.time() - start, 4), "seconds."
+if __name__ == "__main__":
+    A = Heap()
+    A.data = [1, 5, 4, 3, 2, 6, 7, 12, 8, 11, 9, 10]
+    heapsort(A)
+    print A.data
+    
+    A.data = random.sample(range(1000000), 1000000)
+    print "Beginning large sort..."
+    start = time.time()
+    heapsort(A)
+    print "Done. It took", round(time.time() - start, 4), "seconds."
